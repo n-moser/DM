@@ -14,10 +14,10 @@
 -->
 <project name="com.moser.dm2.ui.web" basedir="." default="fetch">
 
-	<property file="build.properties" />
 	<property file="../com.moser.dm2/conf/build/common_build.properties"/>
-	
 	<import file="../com.moser.dm2/conf/build/common_build.xml" />
+	
+	<property file="build.properties" />
 	
 	<!--
 	##################################################################################
@@ -48,6 +48,38 @@
 				<include name="*.jar"/>
 			</fileset>
 		</copy>
+	</target><!--
+	##################################################################################
+	##
+	## Create the Web Application Archive.
+	##
+	##################################################################################
+	-->
+	<target name="war" depends="jar" description="Creates the Web Archive">
+		<war destfile="${dir.out.dist}/${info.name}.war" webxml="${file.webxml}" manifest="${file.manifest}">
+
+			<webinf dir="${dir.conf.web}">
+				<include name="${file.appwebxml}" />
+			</webinf>
+			
+			<lib dir="${dir.out.dist}">
+				<include name="*.jar" />
+			</lib>
+
+			<lib dir="${dir.lib}">
+				<include name="*.jar" />
+			</lib>
+
+			<fileset dir="${dir.conf.web}">
+				<include name="**/*.html" />
+				<include name="**/*.xhtml" />
+				<include name="**/*.js" />
+				<include name="**/*.css" />
+				<include name="**/*.jsp" />
+				<exclude name="web.xml*" />
+			</fileset>
+			
+		</war>
 	</target>
 	
 </project>

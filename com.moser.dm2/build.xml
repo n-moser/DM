@@ -14,9 +14,9 @@
 -->
 <project name="com.moser.dm2" basedir=".">
 
-	<property file="build.properties" />
 	<property file="../com.moser.dm2/conf/build/common_build.properties"/>
-	
 	<import file="../com.moser.dm2/conf/build/common_build.xml" />
+	
+	<property file="build.properties" />
 	
 </project>
