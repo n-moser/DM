@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ ############################################################################
+ ##
+ ## Project:	    Drink Master
+ ## Component:	    com.moser.dm2
+ ## Author:		    Nicolas Moser
+ ## 
+ ## Version:  		1
+ ## 
+ ## Build file for project com.moser.dm2
+ ##
+ ############################################################################
+-->
+<project>
+	
+	<property environment="env" />
+
+	<!-- 
+	##################################################################################
+	##
+	## Defines the buildpath for SourceFolder main
+	##
+	##################################################################################
+	-->
+	<path id="classpath.main">
+		<!-- libs -->
+		<fileset dir="${dir.lib}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- 
+	##################################################################################
+	##
+	## Defines the buildpath for SourceFolder test
+	##
+	##################################################################################
+	-->
+	<path id="classpath.test">
+		<!-- libs -->
+		<fileset dir="${dir.lib}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${dir.out.main}" />
+	</path>
+
+	<!--
+	##################################################################################
+	##
+	## Initializes the build by making the directories 
+	##
+	##################################################################################
+	-->
+	<target name="init">
+		<mkdir dir="${dir.out}" />
+		<mkdir dir="${dir.out.main}" />
+		<mkdir dir="${dir.out.test}" />
+		<mkdir dir="${dir.out.dist}" />
+		<mkdir dir="${dir.out.manifest}" />
+		<mkdir dir="${dir.lib}" />
+	</target>
+	
+	<!-- 
+	##################################################################################
+	##
+	## Fetches the dependencies transitively.
+	##
+	##################################################################################
+	-->
+	<target name="fetch">
+	
+	</target>
+	
+	<!-- 
+	##################################################################################
+	##
+	## Compiles the content of source folder main.
+	##
+	##################################################################################
+	-->
+	<target name="compile.main" depends="init, fetch">
+		<javac classpathref="classpath.main" debug="true" destdir="${dir.out.main}" encoding="ISO-8859-1">
+			<src path="${dir.src.main}" />
+			<compilerarg value="-Xlint:-path" />
+		</javac>
+	</target>
+
+	<!-- 
+	##################################################################################
+	##
+	## Compiles the content of source folder test/gen and test/man
+	##
+	##################################################################################
+	-->
+	<target name="compile.test" depends="compile.main">
+		<javac classpathref="classpath.test" debug="true" destdir="${dir.out.main}" encoding="ISO-8859-1">
+			<src path="${dir.src.test}" />
+			<compilerarg value="-Xlint:-path" />
+		</javac>
+	</target>
+
+	<!-- 
+	##################################################################################
+	##
+	## Creates the manifest
+	##
+	##################################################################################
+	-->
+	<target name="manifest" depends="init">
+
+		<tstamp>
+			<format property="build.time" pattern="yyyy/MM/dd HH:mm" />
+		</tstamp>
+
+		<manifest file="${file.manifest}">
+			<attribute name="Specification-Title" value="${info.name}" />
+			<attribute name="Specification-Version" value="${info.version}" />
+			<attribute name="Specification-Vendor" value="${info.vendor}" />
+			<attribute name="Specification-Vendor-Id" value="${info.organisation}" />
+			<attribute name="Implementation-Title" value="${info.name}" />
+			<attribute name="Implementation-Version" value="${info.version}" />
+			<attribute name="Implementation-Vendor" value="${info.vendor}" />
+			<attribute name="Implementation-Vendor-Id" value="${info.organisation}" />
+			
+			<section name="Build-Infomation">
+				<attribute name="Build-By" value="${user.name}" />
+				<attribute name="Build-Environment" value="DEV" />
+				<attribute name="Build-Time" value="${build.time}" />
+			</section>
+			
+		</manifest>
+	</target>
+	
+	<!-- 
+	##################################################################################
+	##
+	## Creates the jar.facade
+	##
+	##################################################################################
+	-->
+	<target name="jar" depends="compile.main, manifest" description="Creates the Java archive.">
+		<jar destfile="${dir.out.dist}/${info.name}.jar" manifest="${file.manifest}">
+			<fileset dir="${dir.out.main}">
+				<include name="**" />
+			</fileset>
+		</jar>
+	</target>
+	
+	<!-- 
+	##################################################################################
+	##
+	## Cleans the out/ant directory
+	##
+	##################################################################################
+	 -->
+	<target name="clean" description="Cleans the complete out directory">
+		<delete includeemptydirs="true" quiet="true">
+			<fileset dir="${dir.out}" includes="**/*" />
+		</delete>
+	</target>
+
+</project>

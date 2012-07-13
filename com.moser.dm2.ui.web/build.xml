@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ ############################################################################
+ ##
+ ## Project:	    Drink Master
+ ## Component:	    com.moser.dm2
+ ## Author:		    Nicolas Moser
+ ## 
+ ## Version:  		1
+ ## 
+ ## Build file for project com.moser.dm2
+ ##
+ ############################################################################
+-->
+<project name="com.moser.dm2.ui.web" basedir="." default="fetch">
+
+	<property file="build.properties" />
+	<property file="../com.moser.dm2/conf/build/common_build.properties"/>
+	
+	<import file="../com.moser.dm2/conf/build/common_build.xml" />
+	
+	<!--
+	##################################################################################
+	##
+	## Fetches the dependencies transitively.
+	##
+	##################################################################################
+	-->
+	<target name="fetch" depends="fetch.ui" description="Fetches the required libraries">
+		
+	</target>
+	
+	<!--
+	##################################################################################
+	##
+	## Fetches the UI Dependencies.
+	##
+	##################################################################################
+	-->
+	<target name="fetch.ui">
+		<ant antfile="../com.moser.dm2.ui/build.xml" target="jar" inheritall="false" />
+		
+		<copy todir="${dir.lib}">
+			<fileset dir="../com.moser.dm2.ui/out/ant/dist">
+				<include name="*.jar"/>
+			</fileset>
+			<fileset dir="../com.moser.dm2.ui/lib">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+	
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ ############################################################################
+ ##
+ ## Project:	    Drink Master
+ ## Component:	    com.moser.dm2
+ ## Author:		    Nicolas Moser
+ ## 
+ ## Version:  		1
+ ## 
+ ## Build file for project com.moser.dm2
+ ##
+ ############################################################################
+-->
+<project name="com.moser.dm2" basedir=".">
+
+	<property file="build.properties" />
+	<property file="../com.moser.dm2/conf/build/common_build.properties"/>
+	
+	<import file="../com.moser.dm2/conf/build/common_build.xml" />
+	
+</project>

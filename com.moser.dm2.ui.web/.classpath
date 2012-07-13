@@ -3,5 +3,9 @@
 	<classpathentry kind="src" path="src/main"/>
 	<classpathentry kind="src" path="src/test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/com.moser.dm2.jar"/>
+	<classpathentry kind="lib" path="lib/com.moser.dm2.model.jar"/>
+	<classpathentry kind="lib" path="lib/com.moser.dm2.service.jar"/>
+	<classpathentry kind="lib" path="lib/com.moser.dm2.ui.jar"/>
 	<classpathentry kind="output" path="out/ide"/>
 </classpath>
