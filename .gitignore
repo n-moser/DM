@@ -1,6 +1,22 @@
+# Binary Files
 *.class
 
-# Package Files #
+# Binary Folders
+bin/
+out/
+
+# Library Folders
+lib/
+
+# Eclipse Folders
+.metadata/
+
+# Package Files
 *.jar
 *.war
+*.rar
 *.ear
+*.zip
+
+# Git Files
+*.orig
