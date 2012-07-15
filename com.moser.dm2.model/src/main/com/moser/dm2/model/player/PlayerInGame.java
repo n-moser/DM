@@ -130,5 +130,10 @@ public class PlayerInGame extends Datatype {
             return false;
         return true;
     }
+    
+    @Override
+    public String toString() {
+        return this.player.toString();
+    }
 
 }

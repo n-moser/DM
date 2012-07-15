@@ -141,4 +141,9 @@ public class Player extends Datatype {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
+    
 }

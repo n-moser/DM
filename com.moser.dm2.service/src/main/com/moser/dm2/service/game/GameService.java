@@ -8,6 +8,7 @@ import java.util.List;
 import com.moser.dm2.model.drink.Drink;
 import com.moser.dm2.model.game.Game;
 import com.moser.dm2.model.player.Player;
+import com.moser.dm2.model.turn.Turn;
 import com.moser.dm2.service.Service;
 import com.moser.dm2.service.ServiceException;
 
@@ -36,5 +37,15 @@ public interface GameService extends Service {
      *             when the game cannot be started
      */
     Game startNewGame(String name, Integer rounds, List<Player> players, List<Drink> drinks) throws ServiceException;
+
+    /**
+     * Plays a new round.
+     * 
+     * @param game
+     *            the game
+     * 
+     * @return the next turn
+     */
+    Turn nextTurn(Game game);
 
 }

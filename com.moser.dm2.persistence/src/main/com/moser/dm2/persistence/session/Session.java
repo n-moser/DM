@@ -1,8 +1,9 @@
 /*
  * Copyright 2012 Nicolas Moser.
  */
-package com.moser.dm2.model.session;
+package com.moser.dm2.persistence.session;
 
+import com.moser.dm2.model.Datatype;
 import com.moser.dm2.model.game.Game;
 
 /**
@@ -10,28 +11,16 @@ import com.moser.dm2.model.game.Game;
  * 
  * @author Nicolas Moser, PRODYNA AG
  */
-public class Session {
-    
+public abstract class Session extends Datatype {
+
+    private static final long serialVersionUID = 1L;
+
     private Game game;
-    
-    /**
-     * Singleton instance.
-     */
-    private static Session instance = new Session();
 
     /**
-     * Private constructor.
+     * Creates a new {@link Session} instance.
      */
-    private Session() {
-    }
-
-    /**
-     * Singleton access.
-     * 
-     * @return the Session instance.
-     */
-    public static Session getInstance() {
-        return instance;
+    protected Session() {
     }
 
     /**

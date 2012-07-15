@@ -139,7 +139,7 @@
 	##
 	##################################################################################
 	-->
-	<target name="jar" depends="compile.main, manifest" description="Creates the Java archive.">
+	<target name="jar" depends="clean, compile.main, manifest" description="Creates the Java archive.">
 		<jar destfile="${dir.out.dist}/${info.name}.jar" manifest="${file.manifest}">
 			<fileset dir="${dir.out.main}">
 				<include name="**" />

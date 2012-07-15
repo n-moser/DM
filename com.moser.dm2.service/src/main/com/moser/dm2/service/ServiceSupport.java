@@ -9,6 +9,6 @@ package com.moser.dm2.service;
  * 
  * @author Nicolas Moser, PRODYNA AG
  */
-public class ServiceSupport {
+public abstract class ServiceSupport {
 
 }

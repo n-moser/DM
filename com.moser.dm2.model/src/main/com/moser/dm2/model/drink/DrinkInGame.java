@@ -118,4 +118,8 @@ public class DrinkInGame extends Datatype {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return this.drink.toString();
+    }
 }

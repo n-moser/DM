@@ -14,7 +14,7 @@ import com.moser.dm2.service.ServiceSupport;
  * 
  * @author Nicolas Moser, PRODYNA AG
  */
-public class PlayerServiceImpl extends ServiceSupport implements PlayerService {
+class PlayerServiceImpl extends ServiceSupport implements PlayerService {
 
     private static final long serialVersionUID = 1L;
 

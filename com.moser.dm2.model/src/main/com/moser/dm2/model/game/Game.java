@@ -25,6 +25,8 @@ public class Game extends Datatype {
 
     private Integer currentRound;
 
+    private GameHistory history;
+
     private List<DrinkInGame> drinks;
 
     private List<PlayerInGame> players;
@@ -33,7 +35,7 @@ public class Game extends Datatype {
      * Creates a new {@link Game} instance.
      */
     public Game() {
-
+        this.history = new GameHistory();
     }
 
     /**
@@ -91,6 +93,15 @@ public class Game extends Datatype {
      */
     public void setCurrentRound(Integer currentRound) {
         this.currentRound = currentRound;
+    }
+
+    /**
+     * Getter for the history.
+     * 
+     * @return Returns the history.
+     */
+    public GameHistory getHistory() {
+        return this.history;
     }
 
     /**

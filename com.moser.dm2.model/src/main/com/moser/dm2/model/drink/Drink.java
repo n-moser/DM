@@ -140,4 +140,18 @@ public class Drink extends Datatype {
         return true;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append(String.valueOf(this.name));
+        result.append(" (");
+        if (this.volumePercentage == null) {
+            result.append("0.0");
+        } else {
+            result.append(this.volumePercentage);
+        }
+        result.append("% Vol.");
+        result.append(")");
+        return result.toString();
+    }
 }
