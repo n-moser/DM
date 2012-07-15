@@ -70,7 +70,6 @@ public class GameServiceTest {
             
             turn = this.service.nextTurn(game);
         }
-        
         System.out.println(turn);
     }
 
