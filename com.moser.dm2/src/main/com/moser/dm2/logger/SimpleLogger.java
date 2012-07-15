@@ -29,6 +29,12 @@ class SimpleLogger implements DMLogger {
     }
 
     @Override
+    public void error(Exception e, String... message) {
+        print("ERROR", concatenate(message));
+        e.printStackTrace();
+    }
+    
+    @Override
     public void error(String... message) {
         print("ERROR", concatenate(message));
     }

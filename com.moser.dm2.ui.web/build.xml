@@ -16,9 +16,9 @@
 
 	<property file="../com.moser.dm2/conf/build/common_build.properties"/>
 	<import file="../com.moser.dm2/conf/build/common_build.xml" />
-	
+
 	<property file="build.properties" />
-	
+
 	<!--
 	##################################################################################
 	##
@@ -27,9 +27,9 @@
 	##################################################################################
 	-->
 	<target name="fetch" depends="fetch.ui" description="Fetches the required libraries">
-		
+
 	</target>
-	
+
 	<!--
 	##################################################################################
 	##
@@ -39,7 +39,7 @@
 	-->
 	<target name="fetch.ui">
 		<ant antfile="../com.moser.dm2.ui/build.xml" target="jar" inheritall="false" />
-		
+
 		<copy todir="${dir.lib}">
 			<fileset dir="../com.moser.dm2.ui/out/ant/dist">
 				<include name="*.jar"/>
@@ -48,7 +48,9 @@
 				<include name="*.jar"/>
 			</fileset>
 		</copy>
-	</target><!--
+	</target>
+	
+	<!--
 	##################################################################################
 	##
 	## Create the Web Application Archive.
@@ -59,9 +61,9 @@
 		<war destfile="${dir.out.dist}/${info.name}.war" webxml="${file.webxml}" manifest="${file.manifest}">
 
 			<webinf dir="${dir.conf.web}">
-				<include name="${file.appwebxml}" />
+				<include name="**/*.xml" />
 			</webinf>
-			
+
 			<lib dir="${dir.out.dist}">
 				<include name="*.jar" />
 			</lib>
@@ -76,10 +78,40 @@
 				<include name="**/*.js" />
 				<include name="**/*.css" />
 				<include name="**/*.jsp" />
-				<exclude name="web.xml*" />
+				<exclude name="**/*.xml*" />
 			</fileset>
-			
+
+
+			<fileset dir="${dir.res}">
+				<include name="**/*.png" />
+				<include name="**/*.jpg" />
+				<include name="**/*.gif" />
+			</fileset>
+
 		</war>
 	</target>
+
+	<!--
+	##################################################################################
+	##
+	## Expands all created archive artifacts.
+	##
+	##################################################################################
+	-->
+	<target name="expand" depends="expand.war" description="Expands all created archives.">
+
+	</target>
 	
+	<!--
+	##################################################################################
+	##
+	## Expands the Web Application Archive.
+	##
+	##################################################################################
+	-->
+	<target name="expand.war" depends="clean, war">
+		<unwar src="${dir.out.dist}/${info.name}.war" dest="${dir.out.expanded}/${info.name}.war">
+		</unwar>
+	</target>
+
 </project>

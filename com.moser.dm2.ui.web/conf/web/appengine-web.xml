@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+	Copyright 2012 Nicolas Moser
+-->
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
     <application>drink-master</application>
     <version>1</version>
+    
+    <threadsafe>true</threadsafe>
 </appengine-web-app>

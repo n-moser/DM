@@ -68,7 +68,7 @@
 	##
 	##################################################################################
 	-->
-	<target name="fetch">
+	<target name="fetch" description="Fetches the dependencies transitively">
 	
 	</target>
 	
@@ -145,6 +145,17 @@
 				<include name="**" />
 			</fileset>
 		</jar>
+	</target>
+
+	<!--
+	##################################################################################
+	##
+	## Expands all created archive artifacts.
+	##
+	##################################################################################
+	-->
+	<target name="expand" description="Expands all created archives.">
+
 	</target>
 	
 	<!-- 

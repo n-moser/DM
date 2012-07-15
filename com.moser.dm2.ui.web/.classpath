@@ -7,5 +7,9 @@
 	<classpathentry kind="lib" path="lib/com.moser.dm2.model.jar"/>
 	<classpathentry kind="lib" path="lib/com.moser.dm2.service.jar"/>
 	<classpathentry kind="lib" path="lib/com.moser.dm2.ui.jar"/>
+	<classpathentry kind="lib" path="lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/appengine-tools-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="out/ide"/>
 </classpath>

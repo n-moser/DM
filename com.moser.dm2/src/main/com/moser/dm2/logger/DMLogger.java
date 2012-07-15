@@ -10,6 +10,8 @@ package com.moser.dm2.logger;
  */
 public interface DMLogger {
 
+    void error(Exception e, String... message);
+    
     void error(String... message);
 
     void warning(String... message);
