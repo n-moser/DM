@@ -1,3 +1,84 @@
+@CHARSET "ISO-8859-1";
+
 body {
-	background-color: #C8C8C8;
+	background-color: #ADD8E6;
+	font-family: sans-serif;
+}
+
+.header {
+	margin-top: 50px;
+	text-align: center;	
+}
+
+.log_dlg {
+	background-color: #738F99;
+	margin: 50px auto 0;
+	padding-top: 10px;
+	border-radius: 10px;
+	opacity: 1;
+	width: 31%;
+}
+
+.log_title {
+	text-align: center;	
+	margin: 5px;	
+}
+
+.log_fields {
+	padding: 20px 0 0 25px;
+	font-weight: bolder;
+	font-size: smaller;
+}
+
+.log_email {
+	font: bold;
+	float: left;
+	padding-right: 20px;
+}
+
+.log_pwd {
+	font: bold;
+	float: left;
+}
+
+.log_txt {
+	border: none;
+	height: 20px;
+	width: 180px;
+	margin-top: 4px;
+}
+
+.log_but {
+	padding-top: 20px;
+}
+
+.log_but_f {
+	margin-left: 20px;
+	background-color: #E5E5E5;
+	height: 22px;
+	border: none;
+}
+
+.log_reg {
+	font: bolder;
+	text-align: center;	
+	padding: 20px 0 10px 0;
+}
+
+.app_group {
+	height: 300px;
+	width: 700px;
+	margin: 50px auto 0;
+}
+
+.app_entry {
+	color: white;
+	cursor: pointer;
+	background-color: #738F99;
+	border-radius: 10px;
+	margin-left: 20px;
+	height: 180px;
+	width: 200px;
+	text-align: center;
+	float: left;
 }

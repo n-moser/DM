@@ -16,31 +16,38 @@
 	
 	<body>
 	
-	<div>
-		<h1>Welcome to Drink Master 2.0</h1>
+	<h1 class="header">Welcome to Drink Master 2.0</h1>
+	
+	<div class="log_dlg">
 		
-		<h4>Please log in!</h4>
+		<h4 class="log_title">Please log in!</h4>
 		
-		<form action="/login" method="post">
+		<div class="log_fields">
 		
-		<div>
-			<div>E-Mail:</div>
-			<input id="email" name="email" type="text" />
+			<form action="./login" method="post">
+			
+				<div class="log_email">
+					<div>E-Mail:</div>
+					<input id="email" name="email" type="text" class="log_txt" width="100" />
+				</div>
+				
+				<div class="log_pwd">
+					<div>Password:</div>
+					<input id="password" name="password" type="password" class="log_txt" width="100" />
+				</div>
+
+				<div class="log_but">
+					<input type="submit" value="Login" class="log_but_f"/>
+				</div>
+			
+			</form>
+			
+			<div class="log_reg">Or <a href="./registration">sign-up</a> for free!</div>
+
 		</div>
-		
-		<div>
-			<div>Password:</div>
-			<input id="password" name="password" type="password" />
-		</div>
-		
-		<div> <input type="submit" value="Login"/> </div>
-		</form>
 	
 	</div>
 
-	<br/>
-
-	<div>Or <a href="./registration">sign-up</a> for free!</div>
 	
 	</body>
 
