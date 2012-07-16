@@ -53,7 +53,7 @@ public class GameServiceTest {
     @Test
     public void testRound() throws Exception {
 
-        Game game = this.createNewGame("Hans", "Werner", "Peter", "Mike", "Jochen", "Markus");
+        Game game = this.createNewGame("Hans", "Werner", "Peter", "Mike", "Jochen", "Markus", "Stefanie");
 
         Turn turn = this.service.nextTurn(game);
         
