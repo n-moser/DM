@@ -67,8 +67,12 @@ body {
 
 .app_group {
 	height: 300px;
-	width: 700px;
+	width: 800px;
 	margin: 50px auto 0;
+}
+
+#entry_new {
+	background-image: image/new.png;
 }
 
 .app_entry {
@@ -76,8 +80,9 @@ body {
 	cursor: pointer;
 	background-color: #738F99;
 	border-radius: 10px;
-	margin-left: 20px;
-	height: 180px;
+	margin-left: 50px;
+	padding-top: 20px;
+	height: 130px;
 	width: 200px;
 	text-align: center;
 	float: left;
